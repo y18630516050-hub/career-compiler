@@ -39,4 +39,4 @@ if ($failures.Count -gt 0) {
     exit 1
 }
 
-Write-Host "Validated $($skillFiles.Count) skill(s): OK"
+Write-Host "Validated $($skillFiles.Count) skill(s): O，联动S
