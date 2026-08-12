@@ -1,0 +1,22 @@
+name: Validate skill
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Validate Agent Skill metadata and layout
+        shell: pwsh
+        run: ./scripts/validate-skill.ps1
+      - name: Detect whitespace errors
+        shell: pwsh
+        run: git diff-tree --check --no-commit-id -r HEAD
