@@ -40,4 +40,3 @@ if ($failures.Count -gt 0) {
 }
 
 Write-Host "Validated $($skillFiles.Count) skill(s): OK"
-lli
